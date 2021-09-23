@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_bullet",
-    "path": "objects/obj_bullet/obj_bullet.yy",
+    "name": "obj_example_bullet",
+    "path": "objects/obj_example_bullet/obj_example_bullet.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -27,11 +27,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Example",
-    "path": "folders/Example.yy",
+    "name": "Objects",
+    "path": "folders/Example/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_bullet2",
+  "name": "obj_example_bullet_2",
   "tags": [],
   "resourceType": "GMObject",
 }

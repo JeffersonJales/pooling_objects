@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Example",
-    "path": "folders/Example.yy",
+    "name": "Sprites",
+    "path": "folders/Example/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_bullet2",

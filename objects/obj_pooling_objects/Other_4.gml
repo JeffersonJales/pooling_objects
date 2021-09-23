@@ -1,13 +1,13 @@
 /// @description Deactive Instances
 
 /// Pick room pool
-var _pool = obj_pool_map[? room];
+var _pool = global.obj_pool_map[? room];
 
 if(_pool == undefined){
 	_pool = ds_map_create();
 	ds_map_add(_pool, POOL_MAP_KEYS_ARR, []);
 	ds_map_add(_pool, POOL_MAP_KEYS_RELOAD, false);
-	ds_map_add_map(obj_pool_map, room, _pool);
+	ds_map_add_map(global.obj_pool_map, room, _pool);
 }
 else if(_pool[? POOL_MAP_KEYS_RELOAD]) {
 	_pool[? POOL_MAP_KEYS_RELOAD] = false;
@@ -24,4 +24,4 @@ else if(_pool[? POOL_MAP_KEYS_RELOAD]) {
 	}
 }
 
-obj_pool_current = _pool;
+global.obj_pool_current = _pool;

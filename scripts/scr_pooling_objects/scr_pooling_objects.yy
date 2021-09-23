@@ -3,10 +3,10 @@
   "isCompatibility": false,
   "parent": {
     "name": "Pooling_Objects",
-    "path": "Pooling_Objects.yyp",
+    "path": "folders/Pooling_Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_pooling",
+  "name": "scr_pooling_objects",
   "tags": [],
   "resourceType": "GMScript",
 }
