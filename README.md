@@ -34,4 +34,6 @@ Deactivate an instance created without the pooling_objects_get_instance will res
 # Example
 You can also download the project and see the example and see how you can use this lib. [Pooling_Objects_With_Examples.yy](https://github.com/JeffersonJales/pooling_objects/releases/download/Pooling_obj_releases/Pooling_Objects_With_Examples.yyz)
 
+![enter image description here](https://github.com/JeffersonJales/pooling_objects/blob/master/example_obj_pooling.gif?raw=true)
+
 > Written with [StackEdit](https://stackedit.io/).
