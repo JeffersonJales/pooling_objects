@@ -34,7 +34,7 @@ function pooling_objects_get_instance(obj_index){
 }
 
 
-/// 
+/// Set up a callback function when getting an instance from the pool - Default is create_event
 /// @param callback - Expects a function. Will be called on the instance scope.
 /// @param instance - The instance 
 function pooling_object_set_reload_callback(callback, instance = self){

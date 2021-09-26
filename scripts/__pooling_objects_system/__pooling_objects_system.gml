@@ -44,10 +44,10 @@ function __pooling_objects_struct_by_object(obj_ind) constructor {
 				_instance = instance;
 				
 				with(instance){
-					if(variable_instance_get(id, POOLING_OBJECT_RELOAD_FUNC_VAR_NAME))
-						__pooling_objects_reload_func();
+					if(variable_instance_exists(id, POOLING_OBJECT_RELOAD_FUNC_VAR_NAME))
+						__pooling_objects_reload_func(); // The callback function set with pooling_object_set_reload_callback 
 					else 
-						event_perform(ev_create, 0);
+						event_perform(ev_create, 0); // Default reload from pool
 				}
 			}
 		}
