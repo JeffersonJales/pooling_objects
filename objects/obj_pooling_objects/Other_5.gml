@@ -5,10 +5,10 @@
 /// Case the room is persistent, 
 /// we want to preserve the instances that are deactive
 /// So, reactive all the instances, before room transition
-var _keys = global.obj_pool_current[? POOL_MAP_KEYS_ARR];
+var _keys = global.obj_pool_current[? POOLING_OBJECTS_MAP_KEYS_ARR];
 
 if(room_persistent){ 
-	global.obj_pool_current[? POOL_MAP_KEYS_RELOAD] = true;
+	global.obj_pool_current[? POOLING_OBJECTS_MAP_KEYS_RELOAD] = true;
 	
 	var _i = 0, _f = 0;
 	repeat(array_length(_keys)){

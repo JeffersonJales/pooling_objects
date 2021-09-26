@@ -5,13 +5,13 @@ var _pool = global.obj_pool_map[? room];
 
 if(_pool == undefined){
 	_pool = ds_map_create();
-	ds_map_add(_pool, POOL_MAP_KEYS_ARR, []);
-	ds_map_add(_pool, POOL_MAP_KEYS_RELOAD, false);
+	ds_map_add(_pool, POOLING_OBJECTS_MAP_KEYS_ARR, []);
+	ds_map_add(_pool, POOLING_OBJECTS_MAP_KEYS_RELOAD, false);
 	ds_map_add_map(global.obj_pool_map, room, _pool);
 }
-else if(_pool[? POOL_MAP_KEYS_RELOAD]) {
-	_pool[? POOL_MAP_KEYS_RELOAD] = false;
-	var _keys_arr = _pool[? POOL_MAP_KEYS_ARR];
+else if(_pool[? POOLING_OBJECTS_MAP_KEYS_RELOAD]) {
+	_pool[? POOLING_OBJECTS_MAP_KEYS_RELOAD] = false;
+	var _keys_arr = _pool[? POOLING_OBJECTS_MAP_KEYS_ARR];
 	
 	var _per_obj_struct;
 	for(var _i = 0; _i < array_length(_keys_arr); _i++){
