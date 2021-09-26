@@ -1,5 +1,5 @@
 /// @description Handle pool in room end
-/// For more info abour the data from global.obj_pool_map -> obj_pool_struct_by_obj
+/// For more info abour the data from global.obj_pool_map -> __pooling_objects_struct_by_object
 
 
 /// Case the room is persistent, 
