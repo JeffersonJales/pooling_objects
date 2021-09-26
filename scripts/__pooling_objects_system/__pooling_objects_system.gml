@@ -3,7 +3,7 @@
 
 #macro POOL_MAP_KEYS_ARR "__keys_arr"  
 #macro POOL_MAP_KEYS_RELOAD "__reload_on_room_start"
-#macro POOLING_OBJECT_RELOAD_FUNC_VAR_NAME "__pooling_objects_reload_func"
+#macro POOLING_OBJECT_RELOAD_FUNC_VAR_NAME "__pooling_objects_reload_callback"
 
 global.obj_pool_map = ds_map_create();	// The pool map, every object needing to be here, have a reference	
 global.obj_pool_current = undefined;		// The current pool for this room 
