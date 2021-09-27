@@ -2,13 +2,16 @@
   "resources": [
     {"id":{"name":"Room_2","path":"rooms/Room_2/Room_2.yy",},"order":2,},
     {"id":{"name":"__pooling_objects_system","path":"scripts/__pooling_objects_system/__pooling_objects_system.yy",},"order":0,},
+    {"id":{"name":"obj_example2_controller","path":"objects/obj_example2_controller/obj_example2_controller.yy",},"order":3,},
     {"id":{"name":"obj_pooling_objects","path":"objects/obj_pooling_objects/obj_pooling_objects.yy",},"order":1,},
     {"id":{"name":"scr_pooling_objects","path":"scripts/scr_pooling_objects/scr_pooling_objects.yy",},"order":2,},
     {"id":{"name":"obj_example_bullet","path":"objects/obj_example_bullet/obj_example_bullet.yy",},"order":0,},
+    {"id":{"name":"obj_example_bullet_3","path":"objects/obj_example_bullet_3/obj_example_bullet_3.yy",},"order":4,},
     {"id":{"name":"obj_example_bullet_2","path":"objects/obj_example_bullet_2/obj_example_bullet_2.yy",},"order":1,},
     {"id":{"name":"s_bullet","path":"sprites/s_bullet/s_bullet.yy",},"order":0,},
     {"id":{"name":"s_bullet2","path":"sprites/s_bullet2/s_bullet2.yy",},"order":1,},
     {"id":{"name":"obj_example_controller","path":"objects/obj_example_controller/obj_example_controller.yy",},"order":2,},
+    {"id":{"name":"obj_example_bullet_4","path":"objects/obj_example_bullet_4/obj_example_bullet_4.yy",},"order":5,},
     {"id":{"name":"Room_1","path":"rooms/Room_1/Room_1.yy",},"order":0,},
   ],
   "Options": [

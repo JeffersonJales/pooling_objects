@@ -1,0 +1,2 @@
+/// @description 
+amount = 10;

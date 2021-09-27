@@ -35,20 +35,13 @@ function __pooling_objects_struct_by_object(obj_ind) constructor {
 		
 		// Case have a deactive instance, pick the last deactive
 		if(have_deactive){ 
-			var _struct = obj_arr[array_pop(obj_arr_stack)];	// Pick the last one
-			have_deactive = --obj_arr_stack_size > 0;					// Check if have a deactive instance
-
-			with(_struct){  // An __pooling_objects_instance_info reference
+			have_deactive = --obj_arr_stack_size > 0;	// Check if have a deactive instance
+			
+			with(obj_arr[array_pop(obj_arr_stack)]){  // An __pooling_objects_instance_info reference
 				instance_activate_object(instance);
 				status_active = true;
 				_instance = instance;
-				
-				with(instance){
-					if(variable_instance_exists(id, POOLING_OBJECT_RELOAD_FUNC_VAR_NAME))
-						__pooling_objects_reload_callback(); // The callback function set with pooling_object_set_reload_callback 
-					else 
-						event_perform(ev_create, 0); // Default reload from pool
-				}
+				_instance.__pooling_objects_reload_callback(); // The callback function set with pooling_object_set_reload_callback 
 			}
 		}
 		
@@ -56,6 +49,13 @@ function __pooling_objects_struct_by_object(obj_ind) constructor {
 		else {
 			_instance = instance_create_depth(0, 0, 0, obj_index);
 			_instance.__pooling_objects_arr_index = obj_arr_size; 
+			
+			with(_instance){
+				__pooling_objects_struct_ref = other;
+				if(!variable_instance_exists(id, POOLING_OBJECT_RELOAD_FUNC_VAR_NAME))
+					__pooling_objects_reload_callback = __pooling_objects_perform_create_event;
+			}
+			
 			add_instance(_instance);
 		}
 		
@@ -69,4 +69,8 @@ function __pooling_objects_struct_by_object(obj_ind) constructor {
 function __pooling_objects_instance_info(inst, active = true) constructor{
 	instance = inst;				
 	status_active = active;	
+}
+
+function __pooling_objects_perform_create_event(){
+	event_perform(ev_create, 0);	
 }

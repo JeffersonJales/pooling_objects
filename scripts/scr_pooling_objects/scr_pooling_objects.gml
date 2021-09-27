@@ -6,8 +6,7 @@
 function pooling_objects_deactive_instance(instance = self){
 	with(instance){
 		var _index_on_pool = __pooling_objects_arr_index;
-		
-		with(global.obj_pool_current[? object_index]){
+		with(__pooling_objects_struct_ref){
 			array_push(obj_arr_stack, _index_on_pool);
 			obj_arr_stack_size++;
 			have_deactive = true;
@@ -29,7 +28,7 @@ function pooling_objects_get_instance(obj_index){
 		_pool = new __pooling_objects_struct_by_object(obj_index);
 		ds_map_add(global.obj_pool_current, obj_index, _pool);
 	}
-	
+		
 	return _pool.get_instance();
 }
 
@@ -40,9 +39,7 @@ function pooling_objects_get_instance(obj_index){
 function pooling_object_set_reload_callback(callback){
 	if(is_method(callback)){
 		with(other)
-			variable_instance_set(id, 
-														POOLING_OBJECT_RELOAD_FUNC_VAR_NAME, 
-														method(id, callback));
+			__pooling_objects_reload_callback = method(id, callback);
 	}
 }
 
