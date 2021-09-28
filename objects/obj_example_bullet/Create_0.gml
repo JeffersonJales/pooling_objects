@@ -1,5 +1,8 @@
 /// @description Randomize bullet
-speed = random_range(1,3);
-direction = irandom(360);
-image_blend = choose(	c_aqua, c_white, c_yellow, 
-											c_fuchsia, c_olive, c_lime, c_red);
+speed = 5;
+direction = irandom(359);
+image_blend = choose(	c_aqua, c_dkgray, c_orange, c_olive, c_lime);
+
+pooling_object_set_reload_callback(function(){
+	image_blend = choose(	c_aqua, c_dkgray, c_orange, c_olive, c_lime);
+})

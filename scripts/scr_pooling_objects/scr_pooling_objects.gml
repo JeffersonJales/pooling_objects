@@ -5,14 +5,10 @@
 /// @retun N/A
 function pooling_objects_deactive_instance(instance = self){
 	with(instance){
-		var _index_on_pool = __pooling_objects_arr_index;
-		with(__pooling_objects_struct_ref){
-			array_push(obj_arr_stack, _index_on_pool);
-			obj_arr_stack_size++;
-			have_deactive = true;
-			obj_arr[_index_on_pool].status_active = false;
-		}
-	
+		ds_stack_push(__pooling_objects_struct_ref.obj_stack, __pooling_objects_arr_index);
+		__pooling_objects_inst_active = false;
+		__pooling_objects_struct_ref.obj_stack_size++;
+		__pooling_objects_struct_ref.have_deactive = true; 
 		instance_deactivate_object(id);
 	}
 }
@@ -28,10 +24,34 @@ function pooling_objects_get_instance(obj_index){
 		_pool = new __pooling_objects_struct_by_object(obj_index);
 		ds_map_add(global.obj_pool_current, obj_index, _pool);
 	}
+	
+	var _instance;
+	
+	#region Get Instance ------- 
+	if(_pool.have_deactive){ /// GET FROM POOL
+		_pool.have_deactive = --_pool.obj_stack_size > 0;
+		_instance = _pool.obj_arr[ds_stack_pop(_pool.obj_stack)];
 		
-	return _pool.get_instance();
+		instance_activate_object(_instance);
+		_instance.__pooling_objects_inst_active = true;
+		_instance.__pooling_objects_reload_callback();
+	}
+	else { /// A NEW INSTANCE! ADD IT TO THE POOL
+		_instance = instance_create_depth(0, 0, 0, obj_index);
+		_instance.__pooling_objects_arr_index = _pool.obj_arr_size; 
+		_instance.__pooling_objects_inst_active = true;
+		_instance.__pooling_objects_struct_ref = _pool;
+		
+		if(!variable_instance_exists(_instance, POOLING_OBJECT_RELOAD_FUNC_VAR_NAME))
+			_instance.__pooling_objects_reload_callback = __pooling_objects_perform_create_event;
+		
+		array_push(_pool.obj_arr, _instance); 
+		++_pool.obj_arr_size;
+	}
+	#endregion Get Instance ----
+	
+	return _instance;	
 }
-
 
 /// Set up a callback function when getting an instance from the pool - Default is create_event
 /// @param callback - Expects a function. Will be called on the instance scope.

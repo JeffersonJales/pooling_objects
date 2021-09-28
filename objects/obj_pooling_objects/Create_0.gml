@@ -1,5 +1,4 @@
 /// @description OBJECT POOLING
-
 /// See the functions on -> scr_pooling_objects
 
 // Only one instance can exists
