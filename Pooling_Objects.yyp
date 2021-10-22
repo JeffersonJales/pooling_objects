@@ -19,6 +19,7 @@
     {"name":"macOS","path":"options/mac/options_mac.yy",},
     {"name":"Main","path":"options/main/options_main.yy",},
     {"name":"Windows","path":"options/windows/options_windows.yy",},
+    {"name":"operagx","path":"options/operagx/options_operagx.yy",},
   ],
   "isDnDProject": false,
   "isEcma": false,
@@ -47,7 +48,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.3.574",
+    "IDEVersion": "2.3.5.589",
   },
   "resourceVersion": "1.4",
   "name": "Pooling_Objects",
